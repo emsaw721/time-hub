@@ -35,6 +35,10 @@ body {
     height: 80px;
     border-top: 1px solid white;;
   }
+
+  .col-1 {
+    border: 2px solid gray; 
+  }
   
   .hour {
     background-color: #ffffff;
