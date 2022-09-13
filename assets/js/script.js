@@ -3,7 +3,7 @@ var currentDate = moment().format("MMMM Do YYYY, h:mm:ss a");
 document.getElementById("currentDay").textContent = currentDate
 
 //set time in schedule using moment.js
-var time9 = document.getElementById("#9"); 
+var time9 = document.getElementById("#hour-9"); 
 var time10 = document.getElementById("#10");
 var time11 = document.getElementById("#11"); 
 var time12 = document.getElementById("#12"); 
@@ -18,11 +18,29 @@ var time5 = document.getElementById("#5");
 
 var hourBlock = [time9, time10, time11, time12, time1, time2, time3, time4, time5,]
 
+// var currentHour= JSON.parse(hourBlock); 
 //set local storage 
 
+// localStorage.setItem("hour9", JSON.stringify("time9")); 
 
-// localStorage.setItem("time9", JSON.stringify(time9));
-// $("time9").html(localStorage.setItem);
+$("#button-save").on("click",function() {
+    console.log("clicked")
+    $("textarea[type='textbox']").each(function() {
+        var id = $(this).attr("hour-9");
+        var value = $(this).val(); 
+        localStorage.setItem(id, value); 
+
+    }
+    );
+
+}); 
+
+
+
+    // const event9 = localStorage.getItem(JSON.parse(time9)); 
+    // document.getElementById("hour-9").value = event9; 
+    
+    
 
 
 // localStorage.setItem("time10", JSON.stringify(time10));
@@ -54,13 +72,13 @@ var hourBlock = [time9, time10, time11, time12, time1, time2, time3, time4, time
 
 
 
-// // save button
-//     $("#button-save").click(function() {
-//         console.log("button clicked")
-//         var editEl = $("hour-text").val(); 
+// save button
+    // $("#button-save").click(function() {
+    //     console.log("button clicked") 
 
-//     }
-//     );
+
+    // }
+    // );
 
 //get local storage and render on page 
 
@@ -114,11 +132,11 @@ var hourBlock = [time9, time10, time11, time12, time1, time2, time3, time4, time
 // $("time5").html(localStorage.getItem);
 
 
-// // prevent clearing form after click save 
-// $("#daily-form").submit(function(event) {
-//     event.preventDefault(); 
-// }
-// )
+// prevent clearing form after click save 
+$("#daily-form").submit(function(event) {
+    event.preventDefault(); 
+}
+)
 
 //audit each time to display past, present, future 
 
@@ -216,16 +234,3 @@ function timeIndicator() {
 }
 
 timeIndicator(); 
-
-// //delete event function for each timeblock 
-
-// $(document).ready(function () {
-//     $("delete-btn").click(function () {
-//         $(this).remove();
-//     }
-//     );
-// }
-// );
-
-   
-
