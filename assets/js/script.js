@@ -52,14 +52,6 @@ var hourBlock = [time9, time10, time11, time12, time1, time2, time3, time4, time
 // $("time5").html(localStorage.setItem); 
 
 
-// user input for schedule data 
-
-// function userInput() {
-//     $("#hour-text").val(userInput); 
-
-   
-    
-// }; 
 
 
 // // save button
