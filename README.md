@@ -11,23 +11,22 @@ Time Hub consists of editable time blocks from 9am to 5pm where the user can wri
 At first, the application user will see the opening page. 
 ![Alt text](./Assets/pass-genopen.png)
 
-Then, the user will click the red "Generate Password" button. 
-This will propt the app to ask how many characters the user wants their password to contain. 
+Then, the user will click in the first time slot labelled "9am" in order to place his, her, or their tasks to be completed from 9am to 10am. 
 
 ![Alt text](./Assets/firstprompt.png)
 
-Then the app will ask the user if they would like any of the four items listed: uppercase letters, lowercase letters, special characters, and numbers. 
+The user will repeat the above for the times 10am - 5pm.  
 
 ![Alt text](./Assets/secondprompt.png)
 ![Alt text](./Assets/thirdprompt.png)
 ![Alt text](./Assets/fourthprompt.png)
 ![Alt text](./Assets/fifthprompt.png)
 
-Finally, the app will generate the password with the parameters the user indicated. 
+A time block indicated in green means that is the current time, a block indicated in gray means the time has passed, and a block indicated in red means that time is yet to occur. 
 ![Alt text](./Assets/genpass.png)
 
 ## Roadmap
-Future iterations of this app will provide more special characters, prompts displayed in the website box instead of a popup, as well as some minor aesthetic changes. 
+Future iterations of this app will provide personalization such as color, font size, font type, and 15 minute increments within each hour. 
 
 
 ## Authors and acknowledgment
