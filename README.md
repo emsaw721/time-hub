@@ -3,7 +3,7 @@
 
 
 ## Description
-<a href="https://emsaw721.github.io/password-generator/"> Time Hub </a> is an application that allows the user to outline their daily tasks in an easy to read format. 
+<a href="https://emsaw721.github.io/time-hub/"> Time Hub </a> is an application that allows the user to outline their daily tasks in an easy to read format. 
 
 ## Usage
 Time Hub consists of editable time blocks from 9am to 5pm where the user can write and save their tasks for the workday. 
