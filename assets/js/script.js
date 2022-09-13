@@ -16,61 +16,62 @@ var time5 = moment().hour(5);
 
 //array hour blocks 
 
-//var hourBlock = [time9, time10, time11, time12, time1, time2, time3, time4, time5,]
+var hourBlock = [time9, time10, time11, time12, time1, time2, time3, time4, time5,]
 
 // var currentHour= JSON.parse(hourBlock); 
-//set local storage 
 
-// localStorage.setItem("hour9", JSON.stringify("time9")); 
+// user text 
 
-$("#button-save").on("click",function() {
+var text = {}; 
+var textInput = []; 
+
+var createUserText = function(userText) {
+    var userInput = $("<p>").text(userText); 
+    $("#user-text" + userText).append(userInput); 
+}; 
+
+var saveText = function() {
+    localStorage.setItem("text", JSON.stringify(text)); 
+}
+
+$("#button-save").click(function() {
     console.log("clicked")
-    var hour = document.getElementById("daily-form").value;
-    var hourAll = JSON.parse(localStorage.getItem(hourBlock.length)) || []; 
-    hourAll.push(hour);
-    localStorage.setItem("hourAll", JSON.stringify(hourAll.length)); 
+    var textInput = []  
+
+    if (textInput) {
+        textInput.push($("#user-text").text());
+        console.log(textInput); 
+    }
+   
+    saveText(); 
 }
 ); 
 
-
-
-    // const event9 = localStorage.getItem(JSON.parse(time9)); 
-    // document.getElementById("hour-9").value = event9; 
-    
-    
-
-
-// localStorage.setItem("time10", JSON.stringify(time10));
-// $("time10").html(localStorage.setItem);
-
-
-
-
-
-
-
-
-// save button
-    // $("#button-save").click(function() {
-    //     console.log("button clicked") 
-
-
-    // }
-    // );
-
 //get local storage and render on page 
+var loadText = function() {
+    text = JSON.parse(localStorage.getItem("text")); 
 
-// function getUserEvent() {
-//     return userInput(); 
-// };
+    if (!text) {
+        text = {
+            hour9: [],
+            hour10: [],
+            hour11: [],
+            hour12: [],
+            hour1: [],
+            hour2: [],
+            hour3: [],
+            hour4: [],
+            hour5: []
+        };
+    };
 
-// function updateHTML() {
-//     var event = getUserEvent(); 
-//     document.getElementById("hour-text").innerHTML = event; 
+    $.each(text, function(arr) {
+        arr.forEach(function(text) {
+            createUserText();  
+        }); 
+    }); 
 
-// }
-
-// updateHTML(); 
+}
 
 
 // $("time9").html("");
@@ -81,33 +82,6 @@ $("#button-save").on("click",function() {
 // localStorage.getItem(userInput);
 // $("time10").html(localStorage.getItem);
 
-// $("time11").html("");
-// localStorage.getItem(userInput);
-// $("time11").html(localStorage.getItem);
-
-// $("time12").html("");
-// localStorage.getItem(userInput);
-// $("time12").html(localStorage.getItem);
-
-// $("time1").html("");
-// localStorage.getItem(userInput);
-// $("time1").html(localStorage.getItem);
-
-// $("time2").html("");
-// localStorage.getItem(userInput);
-// $("time2").html(localStorage.getItem);
-
-// $("time3").html("");
-// localStorage.getItem(userInput);
-// $("time3").html(localStorage.getItem);
-
-// $("time4").html("");
-// localStorage.getItem(userInput);
-// $("time4").html(localStorage.getItem);
-
-// $("time5").html("");
-// localStorage.getItem(userInput);
-// $("time5").html(localStorage.getItem);
 
 
 // prevent clearing form after click save 
