@@ -15,11 +15,11 @@ var time5 = moment().hour(17);
 var currentHour= moment().hour(); 
 
 // set local storage 
-$("#button-save").click(function() {
+$(".saveBtn").click(function() {
     console.log("clicked")
 var userText = document.getElementById("userText").value; 
 localStorage.setItem("text", userText); 
-console.log(textInput); 
+console.log(userText); 
 }); 
 
  
@@ -28,39 +28,39 @@ $("#userText").val(localStorage.getItem("text"));
 
 
 
-//audit each time to display past, present, future 
-// if certain time is less than current time, then this will happen 
-var hour9 = document.getElementById("9");
-var hour10 = document.getElementById("10");
-var hour11 = document.getElementById("11");
-var hour12 = document.getElementById("12");
-var hour13 = document.getElementById("13");
-var hour14 = document.getElementById("14");
-var hour15 = document.getElementById("15");
-var hour16 = document.getElementById("16");
-var hour17 = document.getElementById("17");
+// //audit each time to display past, present, future 
+// // if certain time is less than current time, then this will happen 
+// var hour9 = document.getElementById("9");
+// var hour10 = document.getElementById("10");
+// var hour11 = document.getElementById("11");
+// var hour12 = document.getElementById("12");
+// var hour13 = document.getElementById("13");
+// var hour14 = document.getElementById("14");
+// var hour15 = document.getElementById("15");
+// var hour16 = document.getElementById("16");
+// var hour17 = document.getElementById("17");
 
-var hourBlocks = [hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16, hour17]
+// var hourBlocks = [hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16, hour17]
 
-var row = document.querySelector(".row");
+// var row = document.querySelector(".row");
 
 
-for (i=0; i < hourBlocks.length; i++) {
-$(row).each(function() {
-if (currentHour == hourBlocks[i]) {
-    $(this).addClass("present");
+// for (i=0; i < hourBlocks.length; i++) {
+// $(row).each(function() {
+// if (currentHour < hourBlocks[i]) {
+//     $(this).addClass("present");
 
-}
+// }
 
-else if (currentHour > hourBlocks[i]) {
-    $(this).addClass("past");
-    $(this).removeClass("present"); 
-}
+// else if (currentHour > hourBlocks[i]) {
+//     $(this).addClass("past");
+//     $(this).removeClass("present"); 
+// }
 
-else {
-    $(this).addClass("future");
-}
-}) 
-}; 
+// else {
+//     $(this).addClass("future");
+// }
+// }) 
+// }; 
 
 
