@@ -1,8 +1,8 @@
 var currentDate = moment().format("MMMM Do YYYY, h:mm:ss a");
-// put in function and set interval for every 1000th second 
+
 document.getElementById("currentDay").textContent = currentDate
 
-var now = Date.now(); 
+
 
 
 
@@ -23,20 +23,21 @@ var currentTime = moment().hour();
 var timeBlocks = [time9, time10, time11, time12, time1, time2, time3, time4, time5]
 
 // set local storage 
-$(document).ready(function() {
-$(".saveBtn").click(function () {
-    console.log("clicked")
+$(document).ready(function () {
+    $(".saveBtn").click(function () {
+        console.log("clicked")
 
-    // $("#userText").each(function() {
-    // var userText = document.getElementsByName("userText").values;
+        var userText = $(this).parent().find("#userText").val();
+        localStorage.setItem("text", userText);
+        console.log(userText);
 
-    var userText = $(this).parent().find("#userText").val(); 
+        var textNumber = $(this).parent().find(".hour").text(); 
+        var userNumber = parseInt(textNumber); 
+        localStorage.setItem("number", userNumber); 
+        console.log(userNumber); 
 
-
-
-localStorage.setItem("text", userText);
-console.log(userText);
-});
+        
+    });
 
 });
 
@@ -45,48 +46,54 @@ console.log(userText);
 
 
 // get local storage and display in textbox
-$("#userText").val(JSON.parse(localStorage.getItem(userText)));
+$("#userText").val(localStorage.getItem("text"));
 
 
 
 
-// //audit each time to display past, present, future 
-// // if certain time is less than current time, then this will happen 
-// var hour9 = document.getElementById("9");
-// var hour10 = document.getElementById("10");
-// var hour11 = document.getElementById("11");
-// var hour12 = document.getElementById("12");
-// var hour13 = document.getElementById("13");
-// var hour14 = document.getElementById("14");
-// var hour15 = document.getElementById("15");
-// var hour16 = document.getElementById("16");
-// var hour17 = document.getElementById("17");
+//audit each time to display past, present, future 
+var hour9 = document.getElementById("9");
+var hour10 = document.getElementById("10");
+var hour11 = document.getElementById("11");
+var hour12 = document.getElementById("12");
+var hour13 = document.getElementById("13");
+var hour14 = document.getElementById("14");
+var hour15 = document.getElementById("15");
+var hour16 = document.getElementById("16");
+var hour17 = document.getElementById("17");
 
-// var hourBlocks = [hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16, hour17]
+var hourBlocks = [hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16, hour17]
 
 
-// var row = document.querySelectorAll(".row");
+var row = document.querySelectorAll(".row");
 
 
 // for (i = 0; i <= hourBlocks.length; i++) {
-//     var compareTime = hourBlocks[i];
+//     // var compareTime = hourBlocks[i];
 
-//     $(row).each(function () {
+    $(row).each(function () {
+        var textNumber = $(this).parent().find(".hour").text(); 
+        var inputNumber = parseInt(textNumber); 
 
-//         if (now == compareTime.Element.id) {
-//             $(row).addClass("present");
 
-//         }
+        if (currentTime === inputNumber) {
+            $(row).addClass("present");
 
-//         else if (now > compareTime.Element.id) {
-//             $(row).addClass("past");
-//             $(row).removeClass("present");
-//         }
+        }
 
-//         else {
-//             $(row).addClass("future");
-//         }
-//     })
+        else if (currentTime > inputNumber) {
+            $(row).removeClass("present");
+            $(row).addClass("past");
+            
+        }
+
+        else {
+            $(row).addClass("future");
+        }
+
+    }); 
+
+
 // };
 
 
