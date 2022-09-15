@@ -33,14 +33,14 @@ var createUserText = function(userText) {
 }; 
 
 var saveText = function() {
-    localStorage.setItem("text", JSON.stringify(text)); 
+    localStorage.setItem("text", ); 
 
     //.sibling and .parent to save to local storage 
 }
 
 $("#button-save").click(function() {
     console.log("clicked")
-    var textInput = []  
+    var textInput = $("#9").siblings().length; 
 
     if (textInput) {
         textInput.join($("#user-text").text());  
