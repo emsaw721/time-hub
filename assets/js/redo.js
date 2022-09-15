@@ -17,12 +17,12 @@ var currentHour= moment().hour();
 // set local storage 
 $("#button-save").click(function() {
     console.log("clicked")
-
-var textInput = $("#9").siblings().length; 
-localStorage.setItem("text", textInput); 
+var userText = document.getElementById("userText").value; 
+localStorage.setItem("text", userText); 
 console.log(textInput); 
 }); 
 
+ 
 // get local storage and display in textbox
 $("#userText").val(localStorage.getItem("text")); 
 
@@ -47,7 +47,7 @@ var row = document.querySelector(".row");
 
 for (i=0; i < hourBlocks.length; i++) {
 $(row).each(function() {
-if (currentHour === hourBlocks[i]) {
+if (currentHour == hourBlocks[i]) {
     $(this).addClass("present");
 
 }
