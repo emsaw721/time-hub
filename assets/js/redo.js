@@ -14,12 +14,17 @@ var time4 = moment().hour(16);
 var time5 = moment().hour(17); 
 var currentHour= moment().hour(); 
 
+// set local storage 
+$("#button-save").click(function() {
+    console.log("clicked")
 
-// prevent clearing form after click save 
-$("#daily-form").submit(function(event) {
-    event.preventDefault(); 
-}
-)
+var textInput = $("#9").siblings().length; 
+localStorage.setItem("text", textInput); 
+console.log(textInput); 
+}); 
+
+// get local storage and display in textbox
+$("#userText").val(localStorage.getItem("text")); 
 
 
 
@@ -42,7 +47,7 @@ var row = document.querySelector(".row");
 
 for (i=0; i < hourBlocks.length; i++) {
 $(row).each(function() {
-if (currentHour < hourBlocks[i]) {
+if (currentHour === hourBlocks[i]) {
     $(this).addClass("present");
 
 }
@@ -55,7 +60,7 @@ else if (currentHour > hourBlocks[i]) {
 else {
     $(this).addClass("future");
 }
-}); 
+}) 
 }; 
 
 
