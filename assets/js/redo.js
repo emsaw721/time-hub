@@ -39,6 +39,8 @@ var hourBlocks = [hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16,
 
 var row = document.querySelector(".row");
 
+
+for (i=0; i < hourBlocks.length; i++) {
 $(row).each(function() {
 if (currentHour < hourBlocks[i]) {
     $(this).addClass("present");
@@ -54,3 +56,6 @@ else {
     $(this).addClass("future");
 }
 }); 
+}; 
+
+
