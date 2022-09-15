@@ -27,66 +27,66 @@ $(document).ready(function() {
 $(".saveBtn").click(function () {
     console.log("clicked")
 
-    $("#userText").each(function(index, element) {
-    var userText = document.getElementById("userText").value;
+    // $("#userText").each(function() {
+    // var userText = document.getElementsByName("userText").values;
 
-    localStorage.setItem("text", userText);
-    console.log(userText);
-    
+    var userText = $(this).parent().find("#userText").val(); 
 
 
+
+localStorage.setItem("text", userText);
+console.log(userText);
 });
 
 });
 
-}); 
 
 
 
 
 // get local storage and display in textbox
-$("#userText").val(localStorage.getItem("text"));
+$("#userText").val(JSON.parse(localStorage.getItem(userText)));
 
 
 
 
-//audit each time to display past, present, future 
-// if certain time is less than current time, then this will happen 
-var hour9 = document.getElementById("9");
-var hour10 = document.getElementById("10");
-var hour11 = document.getElementById("11");
-var hour12 = document.getElementById("12");
-var hour13 = document.getElementById("13");
-var hour14 = document.getElementById("14");
-var hour15 = document.getElementById("15");
-var hour16 = document.getElementById("16");
-var hour17 = document.getElementById("17");
+// //audit each time to display past, present, future 
+// // if certain time is less than current time, then this will happen 
+// var hour9 = document.getElementById("9");
+// var hour10 = document.getElementById("10");
+// var hour11 = document.getElementById("11");
+// var hour12 = document.getElementById("12");
+// var hour13 = document.getElementById("13");
+// var hour14 = document.getElementById("14");
+// var hour15 = document.getElementById("15");
+// var hour16 = document.getElementById("16");
+// var hour17 = document.getElementById("17");
 
-var hourBlocks = [hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16, hour17]
-
-
-var row = document.querySelectorAll(".row");
+// var hourBlocks = [hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16, hour17]
 
 
-for (i = 0; i <= hourBlocks.length; i++) {
-    var compareTime = hourBlocks[i];
+// var row = document.querySelectorAll(".row");
 
-    $(row).each(function () {
 
-        if (now == compareTime.Element.id) {
-            $(row).addClass("present");
+// for (i = 0; i <= hourBlocks.length; i++) {
+//     var compareTime = hourBlocks[i];
 
-        }
+//     $(row).each(function () {
 
-        else if (now > compareTime.Element.id) {
-            $(row).addClass("past");
-            $(row).removeClass("present");
-        }
+//         if (now == compareTime.Element.id) {
+//             $(row).addClass("present");
 
-        else {
-            $(row).addClass("future");
-        }
-    })
-};
+//         }
+
+//         else if (now > compareTime.Element.id) {
+//             $(row).addClass("past");
+//             $(row).removeClass("present");
+//         }
+
+//         else {
+//             $(row).addClass("future");
+//         }
+//     })
+// };
 
 
