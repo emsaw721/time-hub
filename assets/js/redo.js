@@ -73,12 +73,12 @@ for (i = 0; i <= hourBlocks.length; i++) {
 
     $(row).each(function () {
 
-        if (now == compareTime.dataset.id) {
+        if (now == compareTime.Element.id) {
             $(row).addClass("present");
 
         }
 
-        else if (now > compareTime.dataset.id) {
+        else if (now > compareTime.Element.id) {
             $(row).addClass("past");
             $(row).removeClass("present");
         }
