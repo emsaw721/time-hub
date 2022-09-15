@@ -2,7 +2,7 @@ var currentDate = moment().format("MMMM Do YYYY, h:mm:ss a");
 // put in function and set interval for every 1000th second 
 document.getElementById("currentDay").textContent = currentDate
 
-
+var now = Date.now(); 
 
 
 
@@ -69,14 +69,16 @@ var row = document.querySelectorAll(".row");
 
 
 for (i = 0; i <= hourBlocks.length; i++) {
+    var compareTime = hourBlocks[i];
+
     $(row).each(function () {
 
-        if (currentTime <= hourBlocks[i].number) {
+        if (now == compareTime.dataset.id) {
             $(row).addClass("present");
 
         }
 
-        else if (currentTime > hourBlocks[i].number) {
+        else if (now > compareTime.dataset.id) {
             $(row).addClass("past");
             $(row).removeClass("present");
         }
