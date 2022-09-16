@@ -18,36 +18,24 @@ var time4 = moment().hour(16);
 var time5 = moment().hour(17);
 var currentTime = moment().hour();
 
-
+console.log(currentTime); 
 //array hour block
 var timeBlocks = [time9, time10, time11, time12, time1, time2, time3, time4, time5]
 
 // set local storage 
-$(document).ready(function () {
+$(document).ready(function () { 
     $(".saveBtn").click(function () {
         console.log("clicked")
 
-        var userText = $(this).parent().find("#userText").val();
-        localStorage.setItem("text", userText);
+        var userText = $(this).siblings("textarea").val(); 
         console.log(userText);
 
-        var textNumber = $(this).parent().find(".hour").text(); 
-        var userNumber = parseInt(textNumber); 
-        localStorage.setItem("number", userNumber); 
-        console.log(userNumber); 
-
+        var textNumber = $(this).parent().attr("id"); 
         
+        localStorage.setItem(textNumber, userText); 
     });
 
 });
-
-
-
-
-
-// get local storage and display in textbox
-$("#userText").val(localStorage.getItem("text"));
-
 
 
 
@@ -66,23 +54,22 @@ var hourBlocks = [hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16,
 
 
 var row = document.querySelectorAll(".row");
-
+console.log(row)
 
 // for (i = 0; i <= hourBlocks.length; i++) {
 //     // var compareTime = hourBlocks[i];
 
     $(row).each(function () {
-        var textNumber = $(this).parent().find(".hour").text(); 
+        var textNumber = $(this).attr("id"); 
         var inputNumber = parseInt(textNumber); 
-
-
+            // $("#userTex").val(localStorage.getItem(textNumber));
+$(this).children("textarea").val(localStorage.getItem(textNumber));
         if (currentTime === inputNumber) {
             $(row).addClass("present");
 
         }
 
         else if (currentTime > inputNumber) {
-            $(row).removeClass("present");
             $(row).addClass("past");
             
         }
