@@ -9,21 +9,17 @@
 Time Hub consists of editable time blocks from 9am to 5pm where the user can write and save their tasks for the workday. 
 
 At first, the application user will see the opening page. 
-![Alt text](./Assets/pass-genopen.png)
+![Alt text](./assets/images/cal-open.png)
 
 Then, the user will click in the first time slot labelled "9am" in order to place his, her, or their tasks to be completed from 9am to 10am. 
 
-![Alt text](./Assets/firstprompt.png)
+![Alt text](./assets/images/second-prompt.png)
 
 The user will repeat the above for the times 10am - 5pm.  
 
-![Alt text](./Assets/secondprompt.png)
-![Alt text](./Assets/thirdprompt.png)
-![Alt text](./Assets/fourthprompt.png)
-![Alt text](./Assets/fifthprompt.png)
+
 
 A time block indicated in green means that is the current time, a block indicated in gray means the time has passed, and a block indicated in red means that time is yet to occur. 
-![Alt text](./Assets/genpass.png)
 
 ## Roadmap
 Future iterations of this app will provide personalization such as color, font size, font type, and 15 minute increments within each hour. 
