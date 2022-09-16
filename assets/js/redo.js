@@ -76,6 +76,8 @@ $(row).each(function () {
     }
 
     else {
+        $(row).removeClass("present");
+        $(row).removeClass("past"); 
         $(row).addClass("future");
     }
 
